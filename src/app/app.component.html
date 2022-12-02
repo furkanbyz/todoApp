@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-5 align-items-center">
       <h3 class="bg-primary text-white p-3">
-        Welcome to {{title7}}
+        Welcome to {{title}}
       </h3>
 
       <div class="index-group">
@@ -19,8 +19,18 @@
             <th>Action</th>
           </tr>
         </thead>
-
+        
+        <!-- app.components içindeki items değişkeni içinde ngfor döngüsü ile döndük -->
         <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.description }}}</td>
+            <td>{{ item.action }}}</td>
+
+          </tr>
+        </tbody>
+
+        <!-- <tbody>
+          liste elemanları aşağıdaki gibi tek tek de verilebilir
           <tr>
             <td>Kahvaltı</td>
             <td>No</td>
@@ -28,16 +38,10 @@
             <td>Spor</td>
             <td>No</td>
           <tr>
-          <tr>
             <td>Fatura</td>
             <td>No</td>
           </tr>
-          <tr>
-            <td>Sinema</td>
-            <td>No</td>
-          </tr>
-
-        </tbody>
+        </tbody> -->
       </table>
 
     </div>
