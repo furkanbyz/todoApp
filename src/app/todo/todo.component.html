@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items2 ; let i = index;">
+          <tr *ngFor="let item of getItems() ; let i = index;">
             <td>{{i+1}}</td>
             <td>{{item.description}}</td>
             <td>{{item.action}}</td>

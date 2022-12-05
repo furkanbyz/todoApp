@@ -1,31 +1,55 @@
 import { Component, OnInit } from '@angular/core';
+import { Model } from '../model';
+import { TodoItem } from '../todoItem';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
+
 export class TodoComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
   }
-  // name değeri string, items değeri any olarak tanımlandı
+
   name: string = "Furkan";
-  items: any[] = [
-    "item1",
-    "item2",
-    "item3",
-    "item4"
-  ]
-  items2 = [
-    { description: "kahvaltı", action: "yes" },
-    { description: "spor", action: "no" },
-    { description: "alışveriş", action: "yes" },
-  ]
+
+  model = new Model();
+
   getName() {
-    return this.name;
+    return this.model.name;
   }
+
+  getItems() {
+    return this.model.items;
+  }
+
+
+
+  // name değeri string, items değeri any olarak tanımlandı
+
+  // üç farklı item tanımlama yöntemi ancak benzer işlem model.ts içinde yapıldı
+  // items: any[] = [
+  //   "item1",
+  //   "item2",
+  //   "item3",
+  //   "item4"
+  // ]
+
+  // items2: TodoItem[] = [
+  //   { description: "kahvaltı", action: "yes" },
+  //   { description: "spor", action: "no" },
+  //   { description: "alışveriş", action: "yes" },
+  // ]
+
+  // items3: TodoItem[] = [
+  //   new TodoItem("kahvaltı","yes"),
+  //   new TodoItem("spor","no"),
+  //   new TodoItem("alışveriş","yes")
+
+  // ];
 
 }
