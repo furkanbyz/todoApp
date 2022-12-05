@@ -1,4 +1,58 @@
 <!-- terminale ng generate component todo yazılarak yeni bir component oluşturuldu, app silindi -->
-<p>
-  todo works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <h3 class="bg-secondary text-white p-3">
+        {{getName()}}'in Listesi
+       
+      </h3>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control">
+        <button class="btn btn-outline-primary">Add</button>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="" id="displayAll">
+        <label for="displayAll" class="form-check-label">Hepsini Göster</label>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items2 ; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.action}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- liste şeklinde aşağıdaki gibi döndürülebilir -->
+      <!-- <ul>
+        <li *ngFor="let item of items">
+          {{item}}
+        </li>
+      </ul> -->
+
+      <!-- <div>
+        <p *ngFor="let item of items">
+          {{item}}
+        </p>
+      </div> -->
+
+      <!-- <div>
+        <p *ngFor="let item of items2">
+          {{item.d escription}}
+        </p>
+      </div> -->
+
+    </div>
+  </div>
+</div>
