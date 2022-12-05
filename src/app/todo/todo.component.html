@@ -5,12 +5,16 @@
     <div class="col-5 mx-auto">
       <h3 class="bg-secondary text-white p-3">
         {{getName()}}'in Listesi
-       
+
       </h3>
+      
       <div class="input-group mb-3">
-        <input type="text" class="form-control">
-        <button class="btn btn-outline-primary">Add</button>
+        <input #txtItem type="text" class="form-control" 
+        (keyup.enter)="addItem(txtItem.value);">
+        
+        <button class="btn btn-outline-primary" (click)="addItem(txtItem.value) ; txtItem.value=''">Add</button>
       </div>
+      {{message}}
 
       <div class="form-check">
         <input type="checkbox" class="form-check-input" name="" id="displayAll">

@@ -27,6 +27,18 @@ export class TodoComponent implements OnInit {
     return this.model.items;
   }
 
+  message = "";
+
+  addItem(value : string){
+    if(value !=""){
+      this.model.items.push({description:value , action:"no"});
+    }
+    else{
+      alert("bilgi giriniz")
+    }
+    
+  }
+
 
 
   // name değeri string, items değeri any olarak tanımlandı
