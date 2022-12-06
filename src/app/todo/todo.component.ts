@@ -42,6 +42,10 @@ export class TodoComponent implements OnInit {
     
   }
 
+  displayCount(){
+    return this.model.items.filter(i=>i.action).length;
+  }
+
 
 
   // name değeri string, items değeri any olarak tanımlandı
